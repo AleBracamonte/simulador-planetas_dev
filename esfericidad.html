@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Esfericidad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <header>
+            <a href="index.html" class="back-link">← Volver al Dashboard</a>
+            <h1>Simulación de Esfericidad</h1>
+        </header>
+
+        <main class="simulation-content">
+            <canvas id="canvas"></canvas>
+            
+            <div class="controls">
+                <button id="playPauseBtn" class="btn">Reproducir</button>
+                <button id="resetBtn" class="btn">Reiniciar</button>
+                <button id="gifBtn" class="btn">Capturar GIF</button>
+            </div>
+
+            <div class="info-panel">
+                <h3>Información de la Simulación</h3>
+                <p id="radius">Radio: 0 unidades</p>
+                <p id="volume">Volumen: 0 u³</p>
+                <p id="surface">Superficie: 0 u²</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Geometría - Propiedades de Esferas</p>
+        </footer>
+    </div>
+
+    <script src="js/esfericidad.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+/* ============================================
+   ESTILOS GLOBALES - MOBILE FIRST
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --tertiary-color: #14b8a6;
+    --background-dark: #0f172a;
+    --background-light: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   DASHBOARD - MENÚ PRINCIPAL
+   ============================================ */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+.simulations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.simulation-card {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.simulation-card:hover {
+    background-color: var(--background-dark);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.simulation-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+
+.simulation-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+footer {
+    background-color: var(--background-light);
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   SIMULACIONES INDIVIDUALES
+   ============================================ */
+
+.simulation-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.simulation-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    display: block;
+    max-width: 100%;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.info-panel {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.info-panel h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-panel p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (480px+)
+   ============================================ */
+
+@media (min-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .simulations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .simulation-card {
+        padding: 2rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - DESKTOP (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+    .simulations-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 2.5rem;
+    }
+
+    header {
+        padding: 3rem 2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .simulation-content {
+        padding: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    canvas {
+        height: 500px;
+    }
+
+    .controls {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .info-panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .info-panel h3 {
+        grid-column: 1 / -1;
+    }
+
+    .info-panel p {
+        margin-bottom: 0;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - LARGE DESKTOP (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
+
+    canvas {
+        height: 600px;
+    }
+}
